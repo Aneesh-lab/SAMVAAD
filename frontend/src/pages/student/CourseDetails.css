@@ -1,0 +1,153 @@
+.course-details-page {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.course-back-button {
+  border: none;
+  background: transparent;
+  color: #4f46e5;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+
+.course-details-header {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 32px;
+  margin-bottom: 32px;
+}
+
+.course-details-badges {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 18px;
+}
+
+.course-details-badges span {
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #4338ca;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.course-details-header h1 {
+  font-size: 32px;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.course-details-header p {
+  color: #6b7280;
+  line-height: 1.7;
+  max-width: 750px;
+}
+
+.course-lessons-section {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 28px;
+}
+
+.course-section-heading h2 {
+  font-size: 22px;
+  color: #111827;
+  margin-bottom: 6px;
+}
+
+.course-section-heading p {
+  color: #6b7280;
+  margin-bottom: 24px;
+}
+
+.course-lessons-empty {
+  text-align: center;
+  padding: 50px 20px;
+  border: 1px dashed #d1d5db;
+  border-radius: 14px;
+}
+
+.course-lessons-empty div {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.course-lessons-empty h3 {
+  color: #111827;
+  margin-bottom: 8px;
+}
+
+.course-lessons-empty p {
+  color: #6b7280;
+}
+
+.course-details-loading {
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  color: #6b7280;
+}
+
+.course-details-loader {
+  width: 34px;
+  height: 34px;
+  border: 3px solid #e5e7eb;
+  border-top-color: #4f46e5;
+  border-radius: 50%;
+  animation: course-spin 0.8s linear infinite;
+}
+
+@keyframes course-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.course-details-error {
+  background: #ffffff;
+  border: 1px solid #fecaca;
+  border-radius: 16px;
+  padding: 30px;
+}
+
+.course-details-error h3 {
+  color: #991b1b;
+  margin-bottom: 8px;
+}
+
+.course-details-error p {
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+.course-details-error button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  background: #4f46e5;
+  color: white;
+  cursor: pointer;
+}
+
+@media (max-width: 640px) {
+  .course-details-header {
+    padding: 22px;
+  }
+
+  .course-details-header h1 {
+    font-size: 26px;
+  }
+
+  .course-lessons-section {
+    padding: 20px;
+  }
+}

@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Navbar from "./Navbar.jsx";
+import Sidebar from "./Sidebar.jsx";
+import "./AppShell.css";
 
 function AppShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
@@ -9,19 +10,21 @@ function AppShell({ children }) {
     setSidebarOpen(false);
   };
 
+  const handleOpenSidebar = () => {
+    setSidebarOpen(true);
+  };
+
   return (
-    <div className="flex min-h-screen bg-slate-50">
+    <div className="app-shell">
       <Sidebar
         isOpen={sidebarOpen}
         onClose={handleCloseSidebar}
       />
 
-      <div className="flex min-w-0 flex-1 flex-col">
-        <Navbar
-          onMenuClick={() => setSidebarOpen(true)}
-        />
+      <div className="app-shell-content">
+        <Navbar onMenuClick={handleOpenSidebar} />
 
-        <main className="flex-1 p-4 sm:p-6 lg:p-8">
+        <main className="app-shell-main">
           {children}
         </main>
       </div>

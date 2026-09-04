@@ -8,7 +8,6 @@ import lessonRoutes from "./routes/lessonRoutes.js";
 import studentRoutes from "./routes/studentRoutes.js";
 import quizRoutes from "./routes/quizRoutes.js";
 import achievementRoutes from "./routes/achievementRoutes.js";
-import { seedAchievements,} from "./utils/seedAchievements.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
 import adminDashboardRoutes from "./routes/adminDashboardRoutes.js";
 
@@ -50,7 +49,7 @@ const PORT = process.env.PORT || 5000;
 const startServer = async () => {
   try {
     await connectDB();
-    await seedAchievements();
+   
     app.listen(PORT, () => {
       console.log(`SAMVAAD server running on port ${PORT}`);
     });
