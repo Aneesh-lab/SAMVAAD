@@ -7,6 +7,8 @@ import Learn from "./pages/student/Learn";
 import ProtectedRoute from "./components/ProtectedRoute";
 import AppShell from "./components/layouts/AppShell";
 import CourseDetails from "./pages/student/CourseDetails";
+import Lesson from "./pages/student/Lesson";
+import Progress from "./pages/student/Progress";
 
 function AdminDashboard() {
   return (
@@ -54,6 +56,19 @@ function App() {
           }
         />
 
+  <Route
+  path="/student/progress"
+  element={
+    <ProtectedRoute allowedRoles={["student"]}>
+      <AppShell>
+        <Progress />
+      </AppShell>
+    </ProtectedRoute>
+  }
+/>
+
+
+
               <Route
   path="/student/learn"
   element={
@@ -75,6 +90,22 @@ function App() {
     </ProtectedRoute>
   }
 />
+
+        <Route
+  path="/student/learn/:id/lesson/:lessonId"
+  element={
+    <ProtectedRoute allowedRoles={["student"]}>
+      <AppShell>
+        <Lesson />
+      </AppShell>
+    </ProtectedRoute>
+  }
+/>
+  
+
+
+
+
 
         <Route
           path="*"
