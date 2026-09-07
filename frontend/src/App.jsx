@@ -9,6 +9,14 @@ import AppShell from "./components/layouts/AppShell";
 import CourseDetails from "./pages/student/CourseDetails";
 import Lesson from "./pages/student/Lesson";
 import Progress from "./pages/student/Progress";
+import Achievements from "./pages/student/Achievements";
+import Profile from "./pages/student/Profile";
+import Practice from "./pages/student/Practice";
+
+
+
+
+
 
 function AdminDashboard() {
   return (
@@ -103,7 +111,38 @@ function App() {
 />
   
 
+  <Route
+  path="/student/achievements"
+  element={
+    <ProtectedRoute allowedRoles={["student"]}>
+      <AppShell>
+        <Achievements />
+      </AppShell>
+    </ProtectedRoute>
+  }
+/>
 
+<Route
+  path="/student/profile"
+  element={
+    <ProtectedRoute allowedRoles={["student"]}>
+      <AppShell>
+        <Profile />
+      </AppShell>
+    </ProtectedRoute>
+  }
+/>
+
+<Route
+  path="/student/practice"
+  element={
+    <ProtectedRoute allowedRoles={["student"]}>
+      <AppShell>
+        <Practice />
+      </AppShell>
+    </ProtectedRoute>
+  }
+/>
 
 
 

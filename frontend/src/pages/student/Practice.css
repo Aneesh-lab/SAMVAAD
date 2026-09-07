@@ -1,0 +1,406 @@
+.practice-page {
+  max-width: 1150px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* Header */
+
+.practice-header {
+  margin-bottom: 28px;
+}
+
+.practice-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4f46e5;
+}
+
+.practice-header h1 {
+  margin: 0;
+  font-size: 32px;
+  color: #111827;
+}
+
+.practice-header p {
+  max-width: 680px;
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #6b7280;
+}
+
+/* Main Card */
+
+.practice-card {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 24px;
+  padding: 24px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+}
+
+/* Camera Area */
+
+.practice-visual {
+  min-height: 440px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.practice-camera-placeholder {
+  width: 100%;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  border: 2px dashed #d1d5db;
+  border-radius: 12px;
+  padding: 30px;
+}
+
+.practice-camera-placeholder > span {
+  margin-bottom: 14px;
+  font-size: 52px;
+  color: #9ca3af;
+}
+
+.practice-camera-placeholder h2 {
+  margin: 0;
+  font-size: 21px;
+  color: #111827;
+}
+
+.practice-camera-placeholder p {
+  max-width: 390px;
+  margin: 8px 0 22px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+/* Start Button */
+
+.practice-start-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #4f46e5;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.practice-start-button:hover {
+  background: #4338ca;
+}
+
+.practice-start-button span {
+  font-size: 19px;
+}
+
+/* Instructions */
+
+.practice-instructions {
+  padding: 4px;
+}
+
+.practice-instructions-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.practice-instructions-header > span {
+  flex-shrink: 0;
+  font-size: 28px;
+  color: #4f46e5;
+}
+
+.practice-instructions-header h2 {
+  margin: 0;
+  font-size: 20px;
+  color: #111827;
+}
+
+.practice-instructions-header p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  color: #6b7280;
+}
+
+/* Steps */
+
+.practice-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.practice-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.practice-step-number {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #eef2ff;
+  color: #4f46e5;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.practice-step h3 {
+  margin: 2px 0 4px;
+  font-size: 14px;
+  color: #111827;
+}
+
+.practice-step p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+/* Information */
+
+.practice-info {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    minmax(0, 1fr)
+  );
+  gap: 16px;
+  margin-top: 20px;
+}
+
+.practice-info-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 20px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+}
+
+.practice-info-item > span {
+  flex-shrink: 0;
+  font-size: 25px;
+  color: #4f46e5;
+}
+
+.practice-info-item h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #111827;
+}
+
+.practice-info-item p {
+  margin: 5px 0 0;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #6b7280;
+}
+
+/* Back Button */
+
+.practice-back-button {
+  margin-top: 24px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.practice-back-button:hover {
+  background: #f9fafb;
+}
+
+.practice-back-button span {
+  font-size: 18px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .practice-card {
+    grid-template-columns: 1fr;
+  }
+
+  .practice-info {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .practice-page {
+    padding: 20px 16px;
+  }
+
+  .practice-header h1 {
+    font-size: 26px;
+  }
+
+  .practice-card {
+    padding: 16px;
+  }
+
+  .practice-visual {
+    min-height: 350px;
+    padding: 12px;
+  }
+
+  .practice-camera-placeholder {
+    min-height: 300px;
+    padding: 20px;
+  }
+
+  .practice-camera-placeholder > span {
+    font-size: 42px;
+  }
+}
+
+
+/* Active Camera */
+
+.practice-camera-active {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.practice-video-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #111827;
+  aspect-ratio: 16 / 10;
+}
+
+.practice-video {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.practice-camera-status {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: rgba(17, 24, 39, 0.78);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.practice-status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+}
+
+.practice-stop-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 16px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.practice-stop-button:hover {
+  background: #f9fafb;
+}
+
+.practice-stop-button span {
+  font-size: 18px;
+}
+
+/* Camera Error */
+
+.practice-camera-error {
+  max-width: 400px;
+  margin: 14px 0 0;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #dc2626 !important;
+  font-size: 13px !important;
+}
+
+.practice-video-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.practice-video {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-height: 420px;
+  object-fit: cover;
+  background: #111827;
+  transform: scaleX(-1);
+}
+
+.practice-hand-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  transform: scaleX(-1);
+}

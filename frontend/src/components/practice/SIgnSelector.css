@@ -1,0 +1,147 @@
+.sign-selector {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  margin-bottom: 24px;
+}
+
+.sign-selector-header {
+  margin-bottom: 20px;
+}
+
+.sign-selector-eyebrow {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #4f46e5;
+}
+
+.sign-selector-header h2 {
+  margin: 0 0 6px;
+  font-size: 22px;
+  color: #111827;
+}
+
+.sign-selector-header p {
+  margin: 0;
+  font-size: 14px;
+  color: #6b7280;
+}
+
+.sign-selector-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.sign-option {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 14px;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
+}
+
+.sign-option:hover {
+  border-color: #c7d2fe;
+  background: #f8faff;
+  transform: translateY(-1px);
+}
+
+.sign-option-selected {
+  border-color: #4f46e5;
+  background: #eef2ff;
+}
+
+.sign-option-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  background: #eef2ff;
+  color: #4f46e5;
+}
+
+.sign-option-content {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sign-option-content strong {
+  font-size: 15px;
+  color: #111827;
+}
+
+.sign-option-content small {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.sign-option-check {
+  margin-left: auto;
+  color: #4f46e5;
+  font-size: 20px;
+}
+
+.selected-sign-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #f9fafb;
+  border: 1px solid #e5e7eb;
+}
+
+.selected-sign-info > span {
+  color: #4f46e5;
+}
+
+.selected-sign-info div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.selected-sign-info span {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.selected-sign-info strong {
+  font-size: 15px;
+  color: #111827;
+}
+
+@media (max-width: 900px) {
+  .sign-selector-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .sign-selector {
+    padding: 18px;
+  }
+
+  .sign-selector-grid {
+    grid-template-columns: 1fr;
+  }
+}
