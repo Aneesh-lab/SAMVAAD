@@ -5,9 +5,11 @@ import { getPublishedCourses,
     ,getPublishedLessonById,
     completeLesson,
      getMyProgress,
+     completePractice,
      getStudentCourseDetails,
      getMyXP,
-     getMyStreak
+     getMyStreak,
+     
 } from "../controllers/studentController.js";
 
 import protect from "../middleware/authMiddleware.js";
@@ -42,6 +44,12 @@ router.post(
   "/lessons/:lessonId/complete",
   protect,
   completeLesson
+);
+
+router.post(
+  "/practice/complete",
+  protect,
+  completePractice
 );
 
 router.get(

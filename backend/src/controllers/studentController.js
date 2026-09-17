@@ -388,3 +388,89 @@ export const getMyStreak = async (req, res) => {
     });
   }
 };
+
+
+
+export const completePractice = async (req, res) => {
+  try {
+    const XP_REWARD = 10;
+
+    const user = await User.findById(req.user.id);
+
+    if (!user) {
+      return res.status(404).json({
+        success: false,
+        message: "User not found",
+      });
+    }
+
+    // Calculate today's date
+    const today = getStartOfDay(new Date());
+
+    let newStreak = user.streak;
+
+    // First learning activity
+    if (!user.lastActivityDate) {
+      newStreak = 1;
+    } else {
+      const lastActivity = getStartOfDay(
+        user.lastActivityDate
+      );
+
+      const differenceInTime =
+        today.getTime() - lastActivity.getTime();
+
+      const differenceInDays =
+        Math.floor(
+          differenceInTime /
+            (1000 * 60 * 60 * 24)
+        );
+
+      // Activity on a new consecutive day
+      if (differenceInDays === 1) {
+        newStreak = user.streak + 1;
+      }
+
+      // More than one day missed
+      else if (differenceInDays > 1) {
+        newStreak = 1;
+      }
+
+      // Same day → don't increase streak
+    }
+
+    // Award practice XP
+    user.xp += XP_REWARD;
+    user.streak = newStreak;
+    user.lastActivityDate = new Date();
+
+    await user.save();
+
+    // Check achievements after updating XP/streak
+    const newlyUnlocked =
+      await checkAndUnlockAchievements(
+        req.user.id
+      );
+
+    return res.status(200).json({
+      success: true,
+      message: "Practice completed successfully",
+      xpAwarded: XP_REWARD,
+      totalXP: user.xp,
+      streak: user.streak,
+      achievementsUnlocked:
+        newlyUnlocked,
+    });
+  } catch (error) {
+    console.error(
+      "Complete practice error:",
+      error
+    );
+
+    return res.status(500).json({
+      success: false,
+      message:
+        "Server error while completing practice",
+    });
+  }
+};

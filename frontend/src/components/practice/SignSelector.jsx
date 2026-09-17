@@ -5,46 +5,50 @@ const signs = [
     id: "hello",
     name: "Hello",
     category: "Greetings",
+   
   },
-  {
-    id: "thank-you",
-    name: "Thank You",
-    category: "Greetings",
-  },
+  
   {
     id: "yes",
     name: "Yes",
     category: "Daily Communication",
+    
   },
   {
     id: "no",
     name: "No",
     category: "Daily Communication",
+   
   },
   {
     id: "one",
     name: "One",
     category: "Numbers",
+   
   },
   {
     id: "two",
     name: "Two",
     category: "Numbers",
+   
   },
   {
     id: "three",
     name: "Three",
     category: "Numbers",
+   
   },
   {
     id: "four",
     name: "Four",
     category: "Numbers",
+   
   },
   {
     id: "five",
     name: "Five",
     category: "Numbers",
+   
   },
 ];
 

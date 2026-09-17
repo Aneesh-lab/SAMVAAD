@@ -1,8 +1,11 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import api from "../../config/axios";
 import "./Dashboard.css";
 
 function Dashboard() {
+  const navigate = useNavigate();
+
   const [dashboard, setDashboard] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -14,19 +17,12 @@ function Dashboard() {
 
         setDashboard(response.data);
       } catch (error) {
-        const status = error.response?.status;
-  const message =
-    error.response?.data?.message ||
-    error.message ||
-    "Unknown error";
+        const message =
+          error.response?.data?.message ||
+          error.message ||
+          "Unable to load dashboard";
 
-  alert(
-    `Dashboard Error\n\nStatus: ${
-      status || "No response"
-    }\n\nMessage: ${message}`
-  );
-
-  setError(message);
+        setError(message);
       } finally {
         setLoading(false);
       }
@@ -48,6 +44,7 @@ function Dashboard() {
     return (
       <div className="dashboard-error">
         <div className="dashboard-error-icon">!</div>
+
         <div>
           <h3>Unable to load dashboard</h3>
           <p>{error}</p>
@@ -110,6 +107,7 @@ function Dashboard() {
       <section className="dashboard-stats">
 
         <div className="dashboard-stat-card stat-lessons">
+
           <div className="stat-icon">
             📖
           </div>
@@ -123,10 +121,12 @@ function Dashboard() {
               {statistics.completedLessons}
             </strong>
           </div>
+
         </div>
 
 
         <div className="dashboard-stat-card stat-quizzes">
+
           <div className="stat-icon">
             🎯
           </div>
@@ -140,10 +140,12 @@ function Dashboard() {
               {statistics.quizzesAttempted}
             </strong>
           </div>
+
         </div>
 
 
         <div className="dashboard-stat-card stat-score">
+
           <div className="stat-icon">
             📊
           </div>
@@ -157,10 +159,12 @@ function Dashboard() {
               {statistics.averageQuizScore}%
             </strong>
           </div>
+
         </div>
 
 
         <div className="dashboard-stat-card stat-achievements">
+
           <div className="stat-icon">
             🏆
           </div>
@@ -174,6 +178,7 @@ function Dashboard() {
               {statistics.achievementsUnlocked}
             </strong>
           </div>
+
         </div>
 
       </section>
@@ -232,6 +237,7 @@ function Dashboard() {
         {courses.length === 0 ? (
 
           <div className="empty-state">
+
             <div className="empty-state-icon">
               📚
             </div>
@@ -242,6 +248,7 @@ function Dashboard() {
               New learning content will appear here
               once courses are published.
             </p>
+
           </div>
 
         ) : (
@@ -277,9 +284,16 @@ function Dashboard() {
                 <button
                   type="button"
                   className="course-button"
+                  onClick={() =>
+                    navigate(`/student/learn/${course._id}`)
+                  }
                 >
                   Start learning
-                  <span>→</span>
+
+                  <span>
+                    →
+                  </span>
+
                 </button>
 
               </article>
@@ -320,11 +334,15 @@ function Dashboard() {
           {quizAttempts.length === 0 ? (
 
             <div className="small-empty-state">
-              <span>🎯</span>
+
+              <span>
+                🎯
+              </span>
 
               <p>
                 You haven't attempted any quizzes yet.
               </p>
+
             </div>
 
           ) : (
@@ -347,6 +365,7 @@ function Dashboard() {
                       </div>
 
                       <div>
+
                         <strong>
                           {attempt.quiz?.title ||
                             "Quiz"}
@@ -355,6 +374,7 @@ function Dashboard() {
                         <span>
                           Quiz completed
                         </span>
+
                       </div>
 
                     </div>
@@ -394,12 +414,16 @@ function Dashboard() {
           {achievements.length === 0 ? (
 
             <div className="small-empty-state">
-              <span>🏆</span>
+
+              <span>
+                🏆
+              </span>
 
               <p>
                 Complete lessons and quizzes to
                 unlock achievements.
               </p>
+
             </div>
 
           ) : (
@@ -421,6 +445,7 @@ function Dashboard() {
                     </div>
 
                     <div>
+
                       <strong>
                         {item.achievement?.name ||
                           "Achievement"}
@@ -430,6 +455,7 @@ function Dashboard() {
                         {item.achievement?.description ||
                           ""}
                       </span>
+
                     </div>
 
                   </div>
