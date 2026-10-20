@@ -308,7 +308,7 @@ Frontend
 
 If the frontend uses Vite environment variables for the API base URL, they must use the VITE_ prefix, for example:
 
-VITE_API_BASE_URL=https://your-backend-service.example
+
 
 This is an example only. Use the exact variable name expected by your frontend code. Vite variables prefixed with VITE_ are exposed to the browser bundle; never place secrets in frontend environment variables.
 
