@@ -24,6 +24,10 @@ const lessonSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    videoPublicId: {
+  type: String,
+  default: "",
+},
 
     duration: {
       type: Number,

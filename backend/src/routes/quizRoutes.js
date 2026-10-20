@@ -1,7 +1,19 @@
 import express from "express";
 
 import {
-  createQuiz,getStudentQuiz,submitQuiz
+  createQuiz,
+  getAdminQuizById,
+  submitQuiz,
+  updateQuizQuestions,
+  deleteQuiz,
+  getStudentQuiz,
+  getQuizzes,
+  updateQuiz,
+
+} from "../controllers/quizController.js";
+
+import {
+  toggleQuizPublishStatus,getPublishedQuizzes
 } from "../controllers/quizController.js";
 
 import protect, {
@@ -15,6 +27,56 @@ router.post(
   protect,
   requireRole("admin"),
   createQuiz
+);
+
+router.get(
+  "/",
+  protect,
+  requireRole("admin"),
+  getQuizzes
+);
+
+
+router.get(
+  "/admin/:id",
+  protect,
+  requireRole("admin"),
+  getAdminQuizById
+);
+
+router.put(
+  "/admin/:id",
+  protect,
+  requireRole("admin"),
+  updateQuiz
+);
+
+router.put(
+  "/admin/:id/questions",
+  protect,
+  requireRole("admin"),
+  updateQuizQuestions
+);
+
+router.delete(
+  "/admin/:id",
+  protect,
+  requireRole("admin"),
+  deleteQuiz
+);
+
+router.patch(
+  "/admin/:id/publish",
+  protect,
+  requireRole("admin"),
+  toggleQuizPublishStatus
+);
+
+router.get(
+  "/published",
+  protect,
+  requireRole("student"),
+  getPublishedQuizzes
 );
 
 router.get(

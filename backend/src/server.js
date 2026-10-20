@@ -10,7 +10,7 @@ import quizRoutes from "./routes/quizRoutes.js";
 import achievementRoutes from "./routes/achievementRoutes.js";
 import dashboardRoutes from "./routes/dashboardRoutes.js";
 import adminDashboardRoutes from "./routes/adminDashboardRoutes.js";
-
+import videoRoutes from "./routes/videoRoutes.js";
 
 dotenv.config();
 
@@ -29,6 +29,7 @@ app.use(express.json());
 app.use("/api/auth",authRoutes);
 app.use("/api/courses",courseRoutes)
 app.use("/api/lessons",lessonRoutes);
+app.use("/api/videos", videoRoutes);
 app.use("/api/student",studentRoutes);
 app.use("/api/quizzes", quizRoutes);
 app.use("/api/achievements", achievementRoutes);

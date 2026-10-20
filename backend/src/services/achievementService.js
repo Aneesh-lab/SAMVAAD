@@ -53,26 +53,34 @@ export const checkAndUnlockAchievements = async (userId) => {
 
       let shouldUnlock = false;
 
-      if (
-        achievement.type === "lesson" &&
-        completedLessons >= achievement.requirement
-      ) {
-        shouldUnlock = true;
-      }
+if (
+  achievement.type === "lesson" &&
+  completedLessons >= achievement.requirement
+) {
+  shouldUnlock = true;
+}
 
-      if (
-        achievement.type === "streak" &&
-        user.streak >= achievement.requirement
-      ) {
-        shouldUnlock = true;
-      }
+if (
+  achievement.type === "streak" &&
+  user.streak >= achievement.requirement
+) {
+  shouldUnlock = true;
+}
 
-      if (
-        achievement.type === "xp" &&
-        user.xp >= achievement.requirement
-      ) {
-        shouldUnlock = true;
-      }
+if (
+  achievement.type === "xp" &&
+  user.xp >= achievement.requirement
+) {
+  shouldUnlock = true;
+}
+
+if (
+  achievement.type === "quiz" &&
+  achievement.requirement === 100 &&
+  perfectQuizAttempt
+) {
+  shouldUnlock = true;
+}
 
       if (shouldUnlock) {
         const userAchievement =
