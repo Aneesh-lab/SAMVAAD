@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import api from "../../config/axios";
-import "./AdminQuizQuestions.css";
+import "./adminQuizQuestions.css";
 
 const createEmptyQuestion = () => ({
   question: "",

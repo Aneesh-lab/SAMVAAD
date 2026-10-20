@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../../config/axios";
-import "./StudentQuizzes.css";
+import "./studentQuizzes.css";
 
 function StudentQuizzes() {
   const navigate = useNavigate();

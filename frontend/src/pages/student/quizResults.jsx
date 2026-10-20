@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useLocation, useNavigate, useParams } from "react-router-dom";
-import "./QuizResults.css";
+import "./quizResults.css";
 
 function QuizResults() {
   const { id } = useParams();

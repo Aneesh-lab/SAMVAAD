@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import api from "../../config/axios";
-import "./QuizInstructions.css";
+import "./quizInstructions.css";
 
 function QuizInstructions() {
   const { id } = useParams();

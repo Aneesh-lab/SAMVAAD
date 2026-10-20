@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 
 import api from "../../config/axios";
-import "./AdminDashboard.css";
+import "./adminDashboard.css";
 
 function AdminDashboard() {
   const [statistics, setStatistics] = useState(null);
