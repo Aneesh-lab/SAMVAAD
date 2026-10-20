@@ -13,7 +13,7 @@ function Learn() {
   useEffect(() => {
     const fetchCourses = async () => {
       try {
-        const response = await api.get("/courses");
+        const response = await api.get("/student/courses");
 
         setCourses(response.data.courses || []);
       } catch (error) {

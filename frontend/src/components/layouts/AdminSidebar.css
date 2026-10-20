@@ -1,0 +1,267 @@
+.admin-sidebar {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+
+  display: flex;
+  flex: 0 0 252px;
+  flex-direction: column;
+
+  width: 252px;
+  height: 100vh;
+
+  padding: 24px 16px 16px;
+
+  overflow-y: auto;
+
+  background: #ffffff;
+  border-right: 1px solid #e2e8f0;
+
+  color: #334155;
+}
+
+.admin-sidebar-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 4px 8px 28px;
+}
+
+.admin-sidebar-brand-mark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+
+  border-radius: 12px;
+
+  background: #172554;
+  color: #ffffff;
+
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.admin-sidebar-brand-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.admin-sidebar-brand-name {
+  color: #172033;
+
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
+}
+
+.admin-sidebar-brand-caption {
+  color: #64748b;
+
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.admin-sidebar-section-label {
+  padding: 0 12px;
+  margin-bottom: 10px;
+
+  color: #94a3b8;
+
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+}
+
+.admin-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.admin-sidebar-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  width: 100%;
+  min-height: 44px;
+
+  padding: 0 12px;
+
+  border: 1px solid transparent;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #64748b;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+
+  cursor: pointer;
+
+  transition:
+    background 150ms ease,
+    color 150ms ease,
+    border-color 150ms ease;
+}
+
+.admin-sidebar-nav-item:hover {
+  background: #f8fafc;
+  color: #172033;
+}
+
+.admin-sidebar-nav-item-active {
+  border-color: #e0e7ff;
+
+  background: #eef2ff;
+  color: #3730a3;
+}
+
+.admin-sidebar-nav-item-active:hover {
+  background: #e8edff;
+  color: #3730a3;
+}
+
+.admin-sidebar-nav-icon {
+  font-size: 21px;
+}
+
+.admin-sidebar-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+
+  margin-top: auto;
+  padding-top: 24px;
+}
+
+.admin-sidebar-role {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+
+  padding: 13px 10px;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+
+  background: #f8fafc;
+}
+
+.admin-sidebar-role > .material-symbols-rounded {
+  color: #475569;
+  font-size: 22px;
+}
+
+.admin-sidebar-role > div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.admin-sidebar-role-title {
+  color: #334155;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.admin-sidebar-role-caption {
+  color: #94a3b8;
+  font-size: 10px;
+}
+
+.admin-sidebar-logout {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  min-height: 42px;
+  padding: 0 12px;
+
+  border: none;
+  border-radius: 9px;
+
+  background: transparent;
+  color: #64748b;
+
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  text-align: left;
+
+  cursor: pointer;
+}
+
+.admin-sidebar-logout:hover {
+  background: #fff1f2;
+  color: #be123c;
+}
+
+.admin-sidebar-logout .material-symbols-rounded {
+  font-size: 21px;
+}
+
+.admin-sidebar-overlay {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    z-index: 50;
+
+    height: 100dvh;
+
+    transform: translateX(-100%);
+    visibility: hidden;
+
+    transition:
+      transform 220ms ease,
+      visibility 220ms ease;
+  }
+
+  .admin-sidebar.admin-sidebar-open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+
+  .admin-sidebar-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 45;
+
+    display: block;
+
+    border: none;
+    background: rgb(15 23 42 / 45%);
+
+    cursor: pointer;
+  }
+}
+
+@media (max-width: 360px) {
+  .admin-sidebar {
+    width: min(252px, 85vw);
+    flex-basis: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-sidebar,
+  .admin-sidebar-nav-item {
+    transition: none;
+  }
+}

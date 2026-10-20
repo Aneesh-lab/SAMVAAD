@@ -1,0 +1,638 @@
+.admin-lessons-page {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+/* =========================
+   Header
+========================= */
+
+.admin-lessons-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.admin-lessons-eyebrow {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #6b7280;
+}
+
+.admin-lessons-header h1 {
+  margin: 0;
+  font-size: 32px;
+  line-height: 1.2;
+  color: #111827;
+}
+
+.admin-lessons-header p {
+  margin: 8px 0 0;
+  max-width: 620px;
+  color: #6b7280;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* =========================
+   Back Button
+========================= */
+
+.admin-lessons-back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: 28px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #6b7280;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-lessons-back-button:hover {
+  color: #111827;
+}
+
+.admin-lessons-back-button .material-symbols-rounded {
+  font-size: 18px;
+}
+
+/* =========================
+   Add Lesson Button
+========================= */
+
+.admin-lessons-add-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: none;
+  border-radius: 8px;
+  padding: 11px 16px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-lessons-add-button:hover {
+  background: #1f2937;
+}
+
+.admin-lessons-add-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.admin-lessons-add-button .material-symbols-rounded {
+  font-size: 19px;
+}
+
+/* =========================
+   Error
+========================= */
+
+.admin-lessons-error {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 20px;
+  padding: 12px 14px;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  background: #fef2f2;
+  color: #b91c1c;
+  font-size: 14px;
+}
+
+.admin-lessons-error .material-symbols-rounded {
+  color: #dc2626;
+}
+
+/* =========================
+   Loading State
+========================= */
+
+.admin-lessons-state {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.admin-lessons-state .material-symbols-rounded {
+  margin-bottom: 12px;
+  font-size: 36px;
+  color: #6b7280;
+}
+
+.admin-lessons-state p {
+  margin: 0;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+/* =========================
+   Lesson List
+========================= */
+
+.admin-lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+/* IMPORTANT:
+   JSX contains:
+   1. order
+   2. content
+   3. actions
+
+   There is NO icon column.
+*/
+
+.admin-lesson-card {
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 20px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+}
+
+.admin-lesson-card:hover {
+  border-color: #d1d5db;
+}
+
+/* =========================
+   Lesson Order
+========================= */
+
+.admin-lesson-order {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: #f3f4f6;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+/* =========================
+   Lesson Content
+========================= */
+
+.admin-lesson-content {
+  min-width: 0;
+}
+
+.admin-lesson-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.admin-lesson-title-row h2 {
+  margin: 0;
+  color: #111827;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.admin-lesson-status {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 4px 9px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.admin-lesson-status-published {
+  background: #ecfdf5;
+  color: #047857;
+}
+
+.admin-lesson-status-draft {
+  background: #f3f4f6;
+  color: #6b7280;
+}
+
+.admin-lesson-content > p {
+  margin: 6px 0 10px;
+  color: #6b7280;
+  font-size: 13px;
+  line-height: 1.5;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* =========================
+   Lesson Meta
+========================= */
+
+.admin-lesson-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  color: #6b7280;
+  font-size: 12px;
+}
+
+.admin-lesson-meta span {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.admin-lesson-meta .material-symbols-rounded {
+  font-size: 16px;
+}
+
+/* =========================
+   Lesson Actions
+========================= */
+
+.admin-lesson-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-lesson-edit-button,
+.admin-lesson-delete-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-lesson-edit-button {
+  border: 1px solid #e5e7eb;
+  background: #ffffff;
+  color: #374151;
+}
+
+.admin-lesson-edit-button:hover {
+  background: #f9fafb;
+}
+
+.admin-lesson-delete-button {
+  border: 1px solid #fecaca;
+  background: #ffffff;
+  color: #dc2626;
+}
+
+.admin-lesson-delete-button:hover {
+  background: #fef2f2;
+}
+
+.admin-lesson-edit-button .material-symbols-rounded,
+.admin-lesson-delete-button .material-symbols-rounded {
+  font-size: 18px;
+}
+
+/* =========================
+   Create Lesson Form
+========================= */
+
+.admin-lesson-form-card {
+  margin-bottom: 24px;
+  padding: 24px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  background: #ffffff;
+}
+
+.admin-lesson-form-header {
+  margin-bottom: 22px;
+}
+
+.admin-lesson-form-header h2 {
+  margin: 5px 0 4px;
+  font-size: 20px;
+  color: #111827;
+}
+
+.admin-lesson-form-header p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.admin-lesson-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-lesson-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+}
+
+.admin-lesson-form-group label {
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.admin-lesson-form-group input,
+.admin-lesson-form-group textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 11px 12px;
+  background: #ffffff;
+  color: #111827;
+  font-family: inherit;
+  font-size: 14px;
+  outline: none;
+}
+
+.admin-lesson-form-group input:focus,
+.admin-lesson-form-group textarea:focus {
+  border-color: #111827;
+}
+
+.admin-lesson-form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.admin-lesson-form-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 180px 160px;
+  gap: 16px;
+}
+
+.admin-lesson-publish-toggle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  color: #374151;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.admin-lesson-publish-toggle input {
+  width: 16px;
+  height: 16px;
+  cursor: pointer;
+}
+
+.admin-lesson-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding-top: 8px;
+}
+
+.admin-lesson-cancel-button,
+.admin-lesson-submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-lesson-cancel-button {
+  border: 1px solid #d1d5db;
+  background: #ffffff;
+  color: #374151;
+}
+
+.admin-lesson-cancel-button:hover {
+  background: #f9fafb;
+}
+
+.admin-lesson-submit-button {
+  border: 1px solid #111827;
+  background: #111827;
+  color: #ffffff;
+}
+
+.admin-lesson-submit-button:hover {
+  background: #1f2937;
+}
+
+.admin-lesson-cancel-button:disabled,
+.admin-lesson-submit-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* =========================
+   Empty State
+========================= */
+
+.admin-lessons-empty {
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 32px;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  background: #ffffff;
+  text-align: center;
+}
+
+.admin-lessons-empty > .material-symbols-rounded {
+  margin-bottom: 12px;
+  font-size: 40px;
+  color: #9ca3af;
+}
+
+.admin-lessons-empty h2 {
+  margin: 0 0 8px;
+  color: #111827;
+  font-size: 20px;
+}
+
+.admin-lessons-empty p {
+  max-width: 420px;
+  margin: 0 0 20px;
+  color: #6b7280;
+  line-height: 1.5;
+}
+
+.admin-lessons-empty-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 15px;
+  background: #111827;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.admin-lessons-empty-button:hover {
+  background: #1f2937;
+}
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 900px) {
+  .admin-lesson-card {
+    grid-template-columns: 42px minmax(0, 1fr);
+  }
+
+  .admin-lesson-actions {
+    grid-column: 2;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .admin-lessons-page {
+    padding: 24px 18px;
+  }
+
+  .admin-lessons-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .admin-lessons-header h1 {
+    font-size: 28px;
+  }
+
+  .admin-lessons-add-button {
+    width: 100%;
+  }
+
+  .admin-lesson-form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .admin-lessons-page {
+    padding: 20px 14px;
+  }
+
+  .admin-lessons-header h1 {
+    font-size: 25px;
+  }
+
+  .admin-lesson-card {
+    grid-template-columns: 40px minmax(0, 1fr);
+    gap: 12px;
+  }
+
+  .admin-lesson-actions {
+    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .admin-lesson-edit-button,
+  .admin-lesson-delete-button {
+    flex: 1;
+  }
+
+  .admin-lesson-form-card {
+    padding: 18px;
+  }
+
+  .admin-lesson-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .admin-lesson-cancel-button,
+  .admin-lesson-submit-button {
+    width: 100%;
+  }
+}
+
+
+.admin-lesson-publish-button,
+.admin-lesson-draft-button {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 9px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.admin-lesson-publish-button {
+  border-color: #166534;
+  background: #166534;
+  color: #ffffff;
+}
+
+.admin-lesson-publish-button:hover {
+  background: #14532d;
+}
+
+.admin-lesson-draft-button {
+  border-color: #92400e;
+  background: #ffffff;
+  color: #92400e;
+}
+
+.admin-lesson-draft-button:hover {
+  background: #fffbeb;
+}
+
+.admin-lesson-publish-button .material-symbols-rounded,
+.admin-lesson-draft-button .material-symbols-rounded {
+  font-size: 18px;
+}

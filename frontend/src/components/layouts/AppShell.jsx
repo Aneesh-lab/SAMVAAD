@@ -1,10 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import Navbar from "./Navbar.jsx";
 import Sidebar from "./Sidebar.jsx";
+import AdminSidebar from "./AdminSidebar.jsx";
+
 import "./AppShell.css";
 
 function AppShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const location = useLocation();
+
+  const isAdminRoute = location.pathname.startsWith("/admin");
 
   const handleCloseSidebar = () => {
     setSidebarOpen(false);
@@ -14,12 +22,24 @@ function AppShell({ children }) {
     setSidebarOpen(true);
   };
 
+  // Close the mobile sidebar when navigating to another page.
+  useEffect(() => {
+    setSidebarOpen(false);
+  }, [location.pathname]);
+
   return (
     <div className="app-shell">
-      <Sidebar
-        isOpen={sidebarOpen}
-        onClose={handleCloseSidebar}
-      />
+      {isAdminRoute ? (
+        <AdminSidebar
+          isOpen={sidebarOpen}
+          onClose={handleCloseSidebar}
+        />
+      ) : (
+        <Sidebar
+          isOpen={sidebarOpen}
+          onClose={handleCloseSidebar}
+        />
+      )}
 
       <div className="app-shell-content">
         <Navbar onMenuClick={handleOpenSidebar} />

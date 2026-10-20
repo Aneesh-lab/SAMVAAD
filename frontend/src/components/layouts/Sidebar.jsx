@@ -18,6 +18,11 @@ const navigationItems = [
     path: "/student/practice",
   },
   {
+  label: "Quizzes",
+  icon: "quiz",
+  path: "/student/quizzes",
+},
+  {
     label: "Progress",
     icon: "trending_up",
     path: "/student/progress",
