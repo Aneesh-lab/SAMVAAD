@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import api from "../../config/axios";
-import "./adminStudents.css";
+import "./AdminStudents.css";
 
 function AdminStudents() {
   const [students, setStudents] = useState([]);
