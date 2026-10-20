@@ -1,4 +1,4 @@
-import "./SignSelector.css";
+import "./signSelector.css";
 
 const signs = [
   {
